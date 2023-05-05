@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+  </head>
+  <h1>Atualização de Usuário</h1>
+
+    <form name="form1" method="post" action="/atualizaUSUARIO">
+        NOME COMPLETO: <input type="text" id="NOME_USUARIO" name="NOME_USUARIO" size="50" value="">
+        <br>
+        CARGO: <input type="CARGO_USUARIO " id="CARGO_USUARIO" name="CARGO_USUARIO" value="">
+        <br>
+        FOTO: <input type="FOTO_USUARIO" id="FOTO_USUARIO" name="FOTO_USUARIO" value="">
+        <br>
+        <input type="hidden" id="ID_CONTA" name="ID_CONTA" value="">
+        
+        <input type="submit" value="ATUALIZAR">  
+    </form>    
+
+    <script>
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        url = '/atualizaUSUARIO?ID_CONTA='+url.searchParams.get("ID_CONTA");
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let USUARIO = data;
+
+            USUARIO.map(function(USUARIO) {
+                document.getElementById('ID_CONTA').value = USUARIO.ID_CONTA;
+                document.getElementById('NOME_USUARIO').value = USUARIO.NOME_USUARIO;
+                document.getElementById('CARGO_USUARIO').value = USUARIO.CARGO_USUARIO;
+                document.getElementById('FOTO_USUARIO').value = USUARIO.FOTO_USUARIO;
+            });
+            alert(response.json());
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
