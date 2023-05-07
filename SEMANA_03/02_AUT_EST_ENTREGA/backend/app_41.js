@@ -16,7 +16,7 @@ app.use(express.static("../frontend/"));
 /******** CRUD ************/
 app.use(express.json());
 
-// Retorna todos registros (é o R do CRUD - Read)
+// Retorna todos registros da tabela conta
 app.get('/CONTA', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -31,7 +31,7 @@ app.get('/CONTA', (req, res) => {
 		db.close(); // Fecha o banco
 });
 
-// Insere um registro (é o C do CRUD - Create)
+// Insere um registro dentro da tabela USUARIO
 app.post('/insereUSUARIO', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -48,7 +48,7 @@ app.post('/insereUSUARIO', urlencodedParser, (req, res) => {
 	res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Retorna dados de um usuario da tabela USUARIO
 app.get('/USUARIO', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -63,7 +63,7 @@ app.get('/USUARIO', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
-
+//Consulta a tabela USUARIOS
 app.get('/consultaUSUARIO', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -78,7 +78,7 @@ app.get('/consultaUSUARIO', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza os dados da tabela USUARIO
 app.post('/atualizaUSUARIO', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -95,7 +95,7 @@ app.post('/atualizaUSUARIO', urlencodedParser, (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-// Exclui um registro (é o D do CRUD - Delete)
+// Exclui um registro da tabela USUARIO
 app.get('/removeUSUARIO', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -111,7 +111,7 @@ app.get('/removeUSUARIO', urlencodedParser, (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
-
+	
 app.listen(port, hostname, () => {
   console.log(`Servidor rodando em http://${hostname}:${port}/`);
 });
