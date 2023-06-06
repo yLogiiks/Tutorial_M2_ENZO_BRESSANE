@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currículo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="#informacoes-pessoais">Informações Pessoais</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#sobre-mim">Sobre Mim</a></li>
+          <li><a href="#realização">Realizações</a></li>
+          <li><a href="#Personalidade">Personalidade</a></li>
+        </ul>
+      </nav>
+      
+    <header class="header">
+        <h1 class="header__title">Currículo</h1>
+    </header>
+
+    <section class="section" id="informacoes-pessoais">
+        <h2 class="section__title">Informações Pessoais</h2>
+        <div class="section__content">
+            <label class="content__label">Nome:</label> <span id="nome">Enzo Bressane</span>
+        </div>
+        <div class="section__content">
+            <label class="content__label">Cargo:</label> <span id="cargo">Estudante</span>
+        </div>
+        <div class="section__content">
+            <label class="content__label">Foto:</label>
+            <img class="content__img" id="foto" src="https://this-person-does-not-exist.com/img/avatar-gen3a42dc1db3045e8eb7fa3024b02d0d11.jpg" alt="Foto">
+        </div>
+    </section>
+
+    <section class="section" id="habilidades">
+        <h2 class="section__title">Habilidades</h2>
+		<div class="section__content">
+            <label class="content__label">Profissionalidade:</label> Inglês<br>
+			<label class="content__label">Nivel de habilidade:</label> Experiente
+        </div>
+    </section>
+
+    <section class="section" id="formacao">
+        <h2 class="section__title">Formação Acadêmica</h2>
+		<div class="section__content">
+            <label class="content__label">Curso de Formação:</label> Colegio ABC<br>
+		    <label class="content__label">Descrição do Curso:</label> Ensino fundamental<br>
+		    <label class="content__label">Ano de inicio:</label> 2005<br>
+		    <label class="content__label">Ano de finalização:</label> 2020
+        </div>
+    </section>
+
+    <section class="section" id="experiencia">
+        <h2 class="section__title">Experiência Profissional</h2>
+		<div class="section__content">
+            <label class="content__label">Nome da empresa:</label> BTG <br>
+		    <label class="content__label">Cargo:</label> Programador <br>
+		    <label class="content__label">Ano de incio:</label> 2023 <br>
+		    <label class="content__label">Ano de finalização:</label> 2028 <br>
+        </div>
+    </section>
+
+    <section class="section" id="sobre-mim">
+        <h2 class="section__title">Sobre Mim</h2>
+        <div class="section__content">
+            <label class="content__label">Localização:</label> São Paulo<br>
+        </div>
+        <div class="section__content">
+            <label class="content__label">Telefone:</label> (11) 12345-1234
+        </div>
+        <div class="section__content">
+            <label class="content__label">Email:</label> email@gmail.com
+        </div>
+    </section>
+
+	<section class="section" id="realização">
+        <h2 class="section__title">Realizações</h2>
+		<div class="section__content">
+            <label class="content__label">Nome da realização:</label> Desenvolvedor de Jogo <br>
+		    <label class="content__label">Ano da realização:</label> 2023 <br>
+		    <label class="content__label">Descrição da realização:</label> Criei um jogo para a UFAL
+        </div>
+    </section>
+
+	<section class="section" id="Personalidade">
+        <h2 class="section__title">Personalidade</h2>
+		<div class="section__content">
+            <label class="content__label">Traço de personalidade:</label> Proativo<br>
+		    <label class="content__label">Outro traço de personalidade:</label> Comunicativo
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2023 Enzo Bressane</p>
+    </footer>
+    <script>
+        $(document).ready(function(){
+
+          $("nav a").on('click', function(event) {
+
+            if (this.hash !== "") {
+
+              event.preventDefault();
+        
+
+              var hash = this.hash;
+    
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+                window.location.hash = hash;
+              });
+            } 
+          });
+        });
+        </script>
+        
+</body>
+</html>
