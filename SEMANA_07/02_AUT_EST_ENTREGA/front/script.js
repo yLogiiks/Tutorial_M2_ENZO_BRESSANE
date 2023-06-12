@@ -6,7 +6,10 @@ async function createExperiencia() {
     // GET deve ser usado apenas para buscar dados
     method: "GET",
   }).then((response) => {
+    console.log(12341234132)
     const section = document.querySelector('#experiencia');
+    
+    if(!response) return
 
     response.forEach((item) => {
       const div = document.createElement('div');
@@ -17,7 +20,7 @@ async function createExperiencia() {
         <label class="content__label">Cargo:</label> ${item.Cargo_Empresa} <br>
         <label class="content__label">Ano de incio:</label> ${item.Ano_Inicio} <br>
         <label class="content__label">Ano de finalização:</label> ${item.Ano_Final} <br>
-        <label class="content__label">Descrição da Empresa:</label> ${item.Descricao_Empresa} <br>
+        <label class="content__label">Descrição da Empresa:</label> ${item.Descricao_Empresa}
       `;
       section.appendChild(div);
     });
@@ -41,6 +44,7 @@ async function createHabilidades() {
       const section = document.querySelector('#habilidades');
   
       response.forEach((item) => {
+        if(!response) return
         const div = document.createElement('div');
         div.classList.add('section__content');
         // "" '' ``
@@ -68,6 +72,7 @@ async function createHabilidades() {
       const section = document.querySelector('#formacao');
   
       response.forEach((item) => {
+        if(!response) return
         const div = document.createElement('div');
         div.classList.add('section__content');
         // "" '' ``
@@ -96,6 +101,7 @@ async function createHabilidades() {
       const section = document.querySelector('#sobre_mim');
   
       response.forEach((item) => {
+        if(!response) return
         const div = document.createElement('div');
         div.classList.add('section__content');
         // "" '' ``
@@ -119,6 +125,7 @@ async function createHabilidades() {
       // GET deve ser usado apenas para buscar dados
       method: "GET",
     }).then((response) => {
+      if(!response) return
       const section = document.querySelector('#realização');
   
       response.forEach((item) => {
@@ -148,6 +155,7 @@ async function createHabilidades() {
       // GET deve ser usado apenas para buscar dados
       method: "GET",
     }).then((response) => {
+      if(!response) return
       const section = document.querySelector('#Personalidade');
   
       response.forEach((item) => {

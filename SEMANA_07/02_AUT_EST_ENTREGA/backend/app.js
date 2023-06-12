@@ -342,7 +342,7 @@ app.post('/insereExperiencia', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	sql = "INSERT INTO Experiencia (Nome_Empresa, Cargo_Empresa, Ano_Inicio, Ano_Final, Descricao_Empresa) VALUES ('" + req.body.Curso_Formacao + "', '" + req.body.Descricao_Curso + "', '" + req.body.Ano_Inicio + "', '" + req.body.Ano_Final + "', '" + req.body.Descricao_Empresa + "')";
+	sql = "INSERT INTO Experiencia (Nome_Empresa, Cargo_Empresa, Ano_Inicio, Ano_Final, Descricao_Empresa) VALUES ('" + req.body.Nome_Empresa + "', '" + req.body.Cargo_Empresa + "', '" + req.body.Ano_Inicio + "', '" + req.body.Ano_Final + "', '" + req.body.Descricao_Empresa + "')";
 	console.log(sql);
 	db.run(sql, [],  err => {
 		if (err) {
