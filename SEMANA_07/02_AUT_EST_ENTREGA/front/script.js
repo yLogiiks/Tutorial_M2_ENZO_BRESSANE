@@ -78,8 +78,8 @@ async function createHabilidades() {
         // "" '' ``
         div.innerHTML = `
         <label class="content__label">Curso de Formação:</label> ${item.Curso_Formacao}<br>
-        <label class="content__label">Descrição do Curso:</label> ${item.Descrição_Curso}<br>
-        <label class="content__label">Ano de inicio:</label> ${item.Ano_inicio}<br>
+        <label class="content__label">Descrição do Curso:</label> ${item.Descricao_Curso}<br>
+        <label class="content__label">Ano de inicio:</label> ${item.Ano_Inicio}<br>
         <label class="content__label">Ano de finalização:</label> ${item.Ano_Final}<br> 
         `;
         section.appendChild(div);
@@ -106,7 +106,7 @@ async function createHabilidades() {
         div.classList.add('section__content');
         // "" '' ``
         div.innerHTML = `
-            <label class="content__label">Localização:</label>${item.Locallização}<br>
+            <label class="content__label">Localização:</label>${item.Localização}<br>
             <label class="content__label">Telefone:</label>${item.Telefone}<br>
             <label class="content__label">Email:</label>${item.Email}<br>
         `;
@@ -135,7 +135,7 @@ async function createHabilidades() {
         div.innerHTML = `
         <label class="content__label">Nome da realização:</label> ${item.Nome_Realizacao} <br>
         <label class="content__label">Ano da realização:</label> ${item.Ano_Realizacao} <br>
-        <label class="content__label">Descrição da realização:</label> ${item.Descricao_Realizacao}<br>
+        <label class="content__label">Descrição da realização:</label> ${item.Descricao_Reaizacao}<br>
         `;
         section.appendChild(div);
       });
@@ -163,7 +163,7 @@ async function createHabilidades() {
         div.classList.add('section__content');
         // "" '' ``
         div.innerHTML = `
-        <label class="content__label">Traço de personalidade:</label> ${item.Ponstos_Positivos}<br>
+        <label class="content__label">Traço de personalidade:</label> ${item.Pontos_Positivos}<br>
         <label class="content__label">Outro traço de personalidade:</label> ${item.Pontos_Negativos}
         `;
         section.appendChild(div);

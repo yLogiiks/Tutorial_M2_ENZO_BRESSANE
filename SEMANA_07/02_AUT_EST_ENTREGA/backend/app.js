@@ -10,7 +10,7 @@ const port = 3001;
 const app = express();
 
 /* Colocar toda a parte estática no frontend */
-app.use(express.static("./front/"));
+app.use(express.static("./front"));
 
 /* Definição dos endpoints */
 /******** CRUD ************/
@@ -45,7 +45,6 @@ app.post('/insereUsuario', urlencodedParser, (req, res) => {
 		}	
 	});
 	db.close(); // Fecha o banco
-	res.end();
 });
 
 // Monta o formulário para o update (é o U do CRUD - Update)
@@ -123,7 +122,6 @@ app.post('/insereHabilidade', urlencodedParser, (req, res) => {
 		}	
 	});
 	db.close(); // Fecha o banco
-	res.end();
 });
 
 app.get('/atualizarHabilidade', (req, res) => {
@@ -198,7 +196,6 @@ app.post('/inserePersonalidade', urlencodedParser, (req, res) => {
 		}	
 	});
 	db.close(); // Fecha o banco
-	res.end();
 });
 
 app.get('/atualizarHabilidade', (req, res) => {
@@ -335,7 +332,6 @@ app.get('/Experiencia', (req, res) => {
 		});
 		db.close(); // Fecha o banco
 
-		res.end();
 });
 
 app.post('/insereExperiencia', urlencodedParser, (req, res) => {
@@ -425,7 +421,6 @@ app.post('/insereSobre_Mim', urlencodedParser, (req, res) => {
 		}	
 	});
 	db.close(); // Fecha o banco
-	res.end();
 });
 
 app.get('/atualizarSobre_Mim', (req, res) => {
